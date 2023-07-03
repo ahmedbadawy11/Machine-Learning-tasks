@@ -1,16 +1,17 @@
-# This is a sample Python script.
+from evaluation.confusion import Evaluation
+from modeling.classification_models import ClassificationModel
+from preprocessing.dimensionality_reduction import DR
+from preprocessing.read_data import ReadData, Format
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# ---------- Preprocessing--------------
+read_data = ReadData()
+dr = DR()
+df = read_data.read_data_from_local_path("MCSDatasetNEXTCONLab.csv", Format.CSV)
+print(df.head(10))
+# ---------- Modeling--------------
+modeling = ClassificationModel(..., ..., ...)
 
+# ---------- Visualization--------------
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# ---------- Evaluation--------------
+evaluation = Evaluation(..., ...)

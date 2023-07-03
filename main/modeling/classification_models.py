@@ -1,5 +1,5 @@
-from knn import Knn
-from nb import NaiveBayes
+from modeling.knn import Knn
+from modeling.nb import NaiveBayes
 
 
 class ClassificationModel(Knn, NaiveBayes):

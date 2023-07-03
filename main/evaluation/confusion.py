@@ -3,12 +3,15 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix, classification_report
 
+from decorator import timer_decorator
+
 
 class Evaluation:
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
+    @timer_decorator
     def conf_matrix(self, title, show_report=False):
         cm = confusion_matrix(self.x, self.y)
         plt.figure(figsize=(6, 4))

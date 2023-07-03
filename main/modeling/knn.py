@@ -1,6 +1,8 @@
 from sklearn.neighbors import KNeighborsClassifier
 from enum import Enum
 
+from decorator import timer_decorator
+
 
 class Metric(Enum):
     EUCLIDEAN = "euclidean"
@@ -15,6 +17,7 @@ class Knn:
         self.x_test = X_test
         self.x_valid = X_valid
 
+    @timer_decorator
     def knn(self, k, metric=Metric.EUCLIDEAN):
         knn = KNeighborsClassifier(n_neighbors=k, metric=metric.value)
         knn.fit(self.x_train, self.y_train, )
