@@ -8,6 +8,7 @@ from sklearn.naive_bayes import MultinomialNB,ComplementNB,BernoulliNB,GaussianN
 # ---------- Preprocessing--------------
 read_data = ReadData()
 dr = DR()
+
 df = read_data.read_data_from_local_path("MCSDatasetNEXTCONLab.csv", Format.CSV)
 print(df.head(10))
 print (df['Day'].value_counts())
